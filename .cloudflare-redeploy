@@ -1,0 +1,1 @@
+Trigger Cloudflare rebuild after correcting deploy command to npx wrangler deploy.
