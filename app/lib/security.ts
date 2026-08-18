@@ -11,5 +11,5 @@ export const readSession=async(token:string|undefined)=>{if(!token)return null;c
 export const cookieValue=(request:Request,name:string)=>request.headers.get("cookie")?.split(";").map(x=>x.trim()).find(x=>x.startsWith(`${name}=`))?.slice(name.length+1);
 export const sameOrigin=(request:Request)=>{const origin=request.headers.get("origin");return !origin||origin===new URL(request.url).origin};
 export const clientHash=async(request:Request)=>hashSubject(request.headers.get("cf-connecting-ip")||"unknown");
-export const emailAllowed=(email:string)=>/^[^\s@]+@(udd\.cl|mail\.udp\.cl)$/i.test(email);
+export const emailAllowed=(email:string)=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email.trim())
 export const runtimeConfig=cfg;
