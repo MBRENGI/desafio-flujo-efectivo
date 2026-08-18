@@ -1,0 +1,1 @@
+Trigger redeploy after correcting Cloudflare Deploy command to: npx wrangler deploy.
